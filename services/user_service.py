@@ -1,3 +1,4 @@
+
 from models.user_model import users
 
 def create_user_service(data):
