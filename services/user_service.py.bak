@@ -19,9 +19,3 @@ def get_user_service(user_id):
 
 def get_all_users_service():
     return users, 200
-
-def delete_user_service(user_id):
-    if user_id not in users:
-        return {"message": "User not found"}, 404
-    del users[user_id]
-    return {"message": "User deleted"}, 200
