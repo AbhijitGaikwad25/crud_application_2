@@ -11,13 +11,12 @@ def create_user_service(data):
     }
     return {"message": "User created", "user": users[user_id]}, 201
 
+# demo commit 1
 def get_user_service(user_id):
     user = users.get(user_id)
     if not user:
         return {"message": "User not found"}, 404
     return user, 200
-
-# demo commit 1
 
 def get_all_users_service():
     return users, 200
