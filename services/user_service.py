@@ -18,5 +18,6 @@ def get_user_service(user_id):
     return user, 200
 
 
+
 def get_all_users_service():
     return users, 200
