@@ -5,10 +5,10 @@ def create_user_service(data):
     if user_id in users:
         return {"message": "User already exists"}, 400
 
-    # users[user_id] = {
-    #     "name": data.get("name"),
-    #     "email": data.get("email")
-    # }
+    users[user_id] = {
+        "name": data.get("name"),
+        "email": data.get("email")
+    }
     return {"message": "User created", "user": users[user_id]}, 201
 
 def get_user_service(user_id):
