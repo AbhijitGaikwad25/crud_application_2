@@ -17,8 +17,7 @@ def get_user_service(user_id):
         return {"message": "User not found"}, 404
     return user, 200
 
-
-
+# demo commit 1
 
 def get_all_users_service():
     return users, 200
