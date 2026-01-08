@@ -12,6 +12,7 @@ def create_user_service(data):
     return {"message": "User created", "user": users[user_id]}, 201
 
 # demo commit 1
+# demo commit 2
 def get_user_service(user_id):
     user = users.get(user_id)
     if not user:
