@@ -26,6 +26,11 @@ def get_user_service(user_id):
 def get_all_users_service():
     return users, 200
 
+def update_user_service(user_id, data):
+    if user_id not in users:
+        return {"message": "User not found"}, 404
+    users[user_id].update(data)
+    return {"message": "User updated", "user": users[user_id]}, 200
 
 def delete_user_service(user_id):
     if user_id not in users:
