@@ -31,3 +31,13 @@ def delete_user_service(user_id):
         return {"message": "User not found"}, 404
     del users[user_id]
     return {"message": "User deleted"}, 204
+
+def update_user_service(user_id, data):
+    user = users.get(user_id)
+    if not user:
+        return {"message": "User not found"}, 404
+    user.update({
+        "name": data.get("name", user["name"]),
+        "email": data.get("email", user["email"])
+    })
+    return {"message": "User updated", "user": user}, 200
