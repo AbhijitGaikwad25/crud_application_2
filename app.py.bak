@@ -1,4 +1,3 @@
-
 from flask import Flask
 from routes.user_routes import user_bp
 
