@@ -43,16 +43,3 @@ def delete_user_service(user_id):
         return {"message": "User deleted"}, 204
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
-
-
-def update_user_service(user_id, data):
-    try:
-        if user_id not in users:
-            return {"message": "User not found"}, 404
-        users[user_id].update({
-            "name": data.get("name", users[user_id]["name"]),
-            "email": data.get("email", users[user_id]["email"])
-        })
-        return {"message": "User updated", "user": users[user_id]}, 200
-    except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
