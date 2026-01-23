@@ -2,8 +2,7 @@ from flask import Blueprint, request, jsonify
 from services.user_service import (
     create_user_service,
     get_user_service,
-    get_all_users_service,
-    delete_user_service
+    get_all_users_service
 )
 
 user_bp = Blueprint("users", __name__)
