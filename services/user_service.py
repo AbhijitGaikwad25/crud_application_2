@@ -58,19 +58,3 @@ def update_user_service(user_id, data):
         return {"message": "User updated", "user": users[user_id]}, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
-
-
-def get_even_users():
-    try:
-        even_users = {user_id: user for user_id, user in users.items() if user_id % 2 == 0}
-        return even_users, 200
-    except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
-
-
-def get_odd_users():
-    try:
-        odd_users = {user_id: user for user_id, user in users.items() if user_id % 2 != 0}
-        return odd_users, 200
-    except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
