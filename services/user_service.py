@@ -14,10 +14,6 @@ def create_user_service(data):
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-# demo commit 1
-# demo commit 2
-# demo commit 3
-# demo commit 4
 
 def get_user_service(user_id):
     try:
@@ -28,9 +24,6 @@ def get_user_service(user_id):
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-# demo commit 5
-# demo commit 6
-# demo commit 7
 
 def get_all_users_service():
     try:
