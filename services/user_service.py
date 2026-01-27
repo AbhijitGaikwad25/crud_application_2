@@ -14,10 +14,6 @@ def create_user_service(data):
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-# demo commit 1
-# demo commit 2
-# demo commit 3
-# demo commit 4
 
 def get_user_service(user_id):
     try:
@@ -28,9 +24,6 @@ def get_user_service(user_id):
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-# demo commit 5
-# demo commit 6
-# demo commit 7
 
 def get_all_users_service():
     try:
@@ -50,15 +43,5 @@ def update_user_service(user_id, data):
             users[user_id]["email"] = data["email"]
 
         return {"message": "User updated", "user": users[user_id]}, 200
-    except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
-
-
-def delete_user_service(user_id):
-    try:
-        if user_id not in users:
-            return {"message": "User not found"}, 404
-        del users[user_id]
-        return {"message": "User deleted"}, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
