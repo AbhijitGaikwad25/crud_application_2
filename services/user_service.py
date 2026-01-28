@@ -50,3 +50,6 @@ def delete_user_service(user_id):
         return {"message": "User deleted"}, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
+
+def hello_sneha():
+    print("By_sneha")
