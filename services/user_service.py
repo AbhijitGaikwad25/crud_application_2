@@ -56,3 +56,15 @@ def is_prime(num):
 
 def get_prime_numbers(n):
     return [num for num in range(n) if is_prime(num)]
+
+def is_even(num):
+    return num % 2 == 0
+
+def is_odd(num):
+    return num % 2 != 0
+
+def get_even_numbers(n):
+    return [num for num in range(n) if is_even(num)]
+
+def get_odd_numbers(n):
+    return [num for num in range(n) if is_odd(num)]
