@@ -56,3 +56,12 @@ def is_prime(num):
 
 def get_prime_numbers(n):
     return [num for num in range(n) if is_prime(num)]
+
+def is_even(num):
+    return num % 2 == 0
+
+def is_odd(num):
+    return num % 2 != 0
+
+def categorize_numbers(numbers):
+    return {"even": [num for num in numbers if is_even(num)], "odd": [num for num in numbers if is_odd(num)]}
