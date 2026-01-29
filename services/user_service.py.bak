@@ -43,9 +43,18 @@ def update_user_service(user_id, data):
         return {"message": "An error occurred: " + str(e)}, 500
 
 
+def delete_user_service(user_id):
+    try:
+        if user_id not in users:
+            return {"message": "User not found"}, 404
+        del users[user_id]
+        return {"message": "User deleted"}, 200
+    except Exception as e:
+        return {"message": "An error occurred: " + str(e)}, 500
+
+
 def hello_sneha():
     print("By_sneha")
-
 
 def is_prime(num):
     if num <= 1:
@@ -54,7 +63,6 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
-
 
 def get_prime_numbers(n):
     return [num for num in range(n) if is_prime(num)]
