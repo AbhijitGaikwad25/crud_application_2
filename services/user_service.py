@@ -45,3 +45,16 @@ def update_user_service(user_id, data):
 
 def hello_sneha():
     print("By_sneha")
+
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
+def get_prime_numbers(n):
+    return [num for num in range(n) if is_prime(num)]

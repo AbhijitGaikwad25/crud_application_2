@@ -42,14 +42,6 @@ def update_user_service(user_id, data):
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-def delete_user_service(user_id):
-    try:
-        if user_id not in users:
-            return {"message": "User not found"}, 404
-        del users[user_id]
-        return {"message": "User deleted"}, 200
-    except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
 
 def hello_sneha():
     print("By_sneha")
