@@ -41,27 +41,3 @@ def update_user_service(user_id, data):
         return {"message": "User updated", "user": users[user_id]}, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
-
-
-def hello_sneha():
-    print("By_sneha")
-
-def is_prime(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
-
-def get_prime_numbers(n):
-    return [num for num in range(n) if is_prime(num)]
-
-def is_even(num):
-    return num % 2 == 0
-
-def is_odd(num):
-    return num % 2 != 0
-
-def categorize_numbers(numbers):
-    return {"even": [num for num in numbers if is_even(num)], "odd": [num for num in numbers if is_odd(num)]}
