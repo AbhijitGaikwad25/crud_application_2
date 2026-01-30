@@ -29,12 +29,25 @@ def get_all_users_service():
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-
 def delete_user_service(user_id):
     try:
         if user_id not in users:
             return {"message": "User not found"}, 404
         del users[user_id]
         return {"message": "User deleted successfully"}, 200
+    except Exception as e:
+        return {"message": "An error occurred: " + str(e)}, 500
+
+def get_even_users_service():
+    try:
+        even_users = {user_id: user for user_id, user in users.items() if int(user_id) % 2 == 0}
+        return even_users, 200
+    except Exception as e:
+        return {"message": "An error occurred: " + str(e)}, 500
+
+def get_odd_users_service():
+    try:
+        odd_users = {user_id: user for user_id, user in users.items() if int(user_id) % 2 != 0}
+        return odd_users, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
