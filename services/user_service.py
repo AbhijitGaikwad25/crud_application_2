@@ -34,13 +34,6 @@ def delete_user_service(user_id):
         if user_id not in users:
             return {"message": "User not found"}, 404
         del users[user_id]
-        return {"message": "User deleted successfully"}, 200
-    except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
-
-def get_odd_users_service():
-    try:
-        odd_users = {user_id: user for user_id, user in users.items() if int(user_id) % 2 != 0}
-        return odd_users, 200
+        return {"message": "User deleted successfully deleted successfully "}, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
