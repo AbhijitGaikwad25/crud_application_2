@@ -44,3 +44,6 @@ def get_odd_users_service():
         return odd_users, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
+
+def hello_world():
+    return {"message": "World!"}, 200
