@@ -38,9 +38,11 @@ def delete_user_service(user_id):
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
 
-def get_odd_users_service():
+def update_user_service(user_id, data):
     try:
-        odd_users = {user_id: user for user_id, user in users.items() if int(user_id) % 2 != 0}
-        return odd_users, 200
+        if user_id not in users:
+            return {"message": "User not found"}, 404
+        users[user_id].update(data)
+        return {"message": "User updated successfully", "user": users[user_id]}, 200
     except Exception as e:
-        return {"message": "An error occurred: " + str(e)}, 500
+        return {"message ": "An error occurred: " + str(e)}, 500
