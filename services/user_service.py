@@ -46,3 +46,6 @@ def update_user_service(user_id, data):
         return {"message": "User updated successfully", "user": users[user_id]}, 200
     except Exception as e:
         return {"message ": "An error occurred: " + str(e)}, 500
+
+def hello_world_121():
+    return {"message": "Hello, world!"}, 200
