@@ -46,3 +46,13 @@ def update_user_service(user_id, data):
         return {"message": "User updated successfully", "user": users[user_id]}, 200
     except Exception as e:
         return {"message ": "An error occurred: " + str(e)}, 500
+
+def validate_user_service(user_id):
+    try:
+        user = users.get(user_id)
+        if not user:
+            return {"message": "User not found"}, 404
+        # Add validation logic here if necessary
+        return {"message": "User is valid"}, 200
+    except Exception as e:
+        return {"message": "An error occurred: " + str(e)}, 500
