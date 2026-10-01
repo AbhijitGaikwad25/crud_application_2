@@ -37,3 +37,12 @@ def delete_user_service(user_id):
         return {"message": "User deleted successfully"}, 200
     except Exception as e:
         return {"message": "An error occurred: " + str(e)}, 500
+
+def demo_service(user_id):
+    try:
+        user = users.get(user_id)
+        if not user:
+            return {"message": "User not found"}, 404
+        return {"message": "User found", "user": user}, 200
+    except Exception as e:
+        return {"message": "An error occurred: " + str(e)}, 500
